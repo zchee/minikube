@@ -53,6 +53,9 @@ type xhyveDriver struct {
 	DiskNumber     int
 	Virtio9p       bool
 	Virtio9pFolder string
+	Qcow2          bool
+	Initrd         string
+	Vmlinuz        string
 }
 
 func createXhyveHost(config MachineConfig) *xhyveDriver {
@@ -69,5 +72,8 @@ func createXhyveHost(config MachineConfig) *xhyveDriver {
 		Virtio9p:       true,
 		Virtio9pFolder: "/Users",
 		UUID:           xhyveUUID,
+		Qcow2:          true,
+		Initrd:         "initrd",
+		Vmlinuz:        "bzImage",
 	}
 }
